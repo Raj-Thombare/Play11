@@ -9,7 +9,9 @@ function App() {
     <DndProvider backend={HTML5Backend}>
       <div className="App">
         <h1>MUMBAI INDIANS SQUAD - IPL2023</h1>
-        <DragDrop />
+        <div className="playfield">
+          <DragDrop />
+        </div>
       </div>
     </DndProvider>
   );

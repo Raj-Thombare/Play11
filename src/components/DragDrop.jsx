@@ -43,7 +43,10 @@ const DragDrop = () => {
           return <Picture key={player.id} url={player.url} />;
         })}
       </div>
-      <div className="board"></div>
+      <div className="playing-xi">
+        <h4>Playing XI</h4>
+        <div className="Board"></div>
+      </div>
     </>
   );
 };
