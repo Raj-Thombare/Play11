@@ -1,8 +1,22 @@
 import React from "react";
-import "../App.css";
+import { useDrag } from "react-dnd";
 
 const Picture = ({ url }) => {
-  return <img src={url} width="150px" />;
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "image",
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
+  return (
+    <img
+      ref={drag}
+      src={url}
+      width="150px"
+      style={{ opacity: isDragging ? "0.4" : "1" }}
+    />
+  );
 };
 
 export default Picture;
