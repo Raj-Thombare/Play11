@@ -5,7 +5,6 @@ const Picture = ({ url, id }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "image",
     item: { id: id },
-
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),

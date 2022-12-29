@@ -1,41 +1,10 @@
 import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import Picture from "./Picture";
+import Button from "./Button";
+import { MI } from "../Utils/Data";
 
 import "../App.css";
-
-const squad = [
-  {
-    id: 1,
-    name: "Rohit Sharma",
-    url: "https://www.mumbaiindians.com/static-assets/images/players/large/3852.png?v=2.18&w=200",
-  },
-  {
-    id: 2,
-    name: "Jofra Archer",
-    url: "https://www.mumbaiindians.com/static-assets/images/players/large/64254.png?v=2.17&w=400",
-  },
-  {
-    id: 3,
-    name: "Suryakumar yadav",
-    url: "https://www.mumbaiindians.com/static-assets/images/players/large/11803.png?v=2.18&w=200",
-  },
-  {
-    id: 4,
-    name: "Jusprit Bumrah",
-    url: "https://www.mumbaiindians.com/static-assets/images/players/large/63755.png?v=2.18&w=200",
-  },
-  {
-    id: 5,
-    name: "Tim David",
-    url: "https://www.mumbaiindians.com/static-assets/images/players/large/67402.png?v=2.18&w=200",
-  },
-  // {
-  //   id: 6,
-  //   name: "Cameron Green",
-  //   url: "https://www.mumbaiindians.com/static-assets/images/players/large/66870.png?v=2.18&w=200",
-  // },
-];
 
 const DragDrop = () => {
   const [board, setBoard] = useState([]);
@@ -49,22 +18,34 @@ const DragDrop = () => {
   }));
 
   const addPlayerToXI = (id) => {
-    const playerList = squad.filter((player) => id === player.id);
+    const playerList = MI.filter((player) => id === player.id);
     setBoard((board) => [...board, playerList[0]]);
+  };
+
+  const clickHandler = (id) => {
+    console.log(id);
   };
 
   return (
     <>
       <div className="pictures">
-        {squad.map((player) => {
-          return <Picture key={player.id} url={player.url} />;
+        {MI.map((player) => {
+          return (
+            <Button onClick={() => addPlayerToXI(player.id)}>
+              <Picture key={player.id} id={player.id} url={player.url} />
+            </Button>
+          );
         })}
       </div>
       <div className="playing-xi">
         <h4>Playing XI</h4>
-        <div className="Board">
-          {board.map((picture) => {
-            return <Picture url={player.url} id={player.id} />;
+        <div className="Board" ref={drop}>
+          {board.map((player) => {
+            return (
+              <h2 className="player-card" key={player.id}>
+                {player.name}
+              </h2>
+            );
           })}
         </div>
       </div>
