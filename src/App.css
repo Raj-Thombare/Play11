@@ -27,6 +27,12 @@
 
 img {
   margin: 5px;
+  cursor: grab;
+  transition: all 0.25s ease-in-out 0s;
+}
+
+img:hover {
+  width: 100px;
 }
 
 .Board {
