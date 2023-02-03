@@ -7,7 +7,7 @@ export const MI = [
 
   {
     id: 3,
-    name: "Suryakumar yadav",
+    name: "Surya yadav",
     url: "https://www.mumbaiindians.com/static-assets/images/players/large/11803.png?v=2.18&w=200",
   },
   {

@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .App {
@@ -15,6 +15,11 @@
 
 .App h1 {
   padding: 2rem 0rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
 .Pictures {
@@ -32,9 +37,33 @@ img {
 }
 
 .player-card {
-  padding: 8px 5px;
-  background-color: skyblue;
-  border-bottom: 2px solid black;
+  /* padding: 8px 5px; */
+  
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: center;
+    display: flex; */
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid hsla(0,0%,100%,.4);
+    transition: border .3s;
+    border-radius: 0.6rem;
+    height: 3.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.player-container {
+  display: flex;
+  align-items: center;
+}
+.player-digit {
+  margin: 5px;
+  margin-right: 10px;
+  font-size: 20px;
 }
 
 /* img:hover {
@@ -42,13 +71,42 @@ img {
 } */
 
 .Board {
-  width: 300px;
-  height: 464px;
-  border: 2px solid black;
+  width: 320px;
+  height: 100%;
+  background-color: #0d0d0d;
+  padding: 0.8rem 0.8rem 0.4rem 0.4rem;
+  border-radius: 0px 0px 8px 8px;
 }
 
 .playfield {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+  padding: 0rem 3rem;
+}
+
+.xi-img {
+  border-radius: 50%;
+  border:none;
+  background: transparent;
+    width: 35px;
+    margin-right: 20px;
+}
+
+.playing-xi {
+  background-color: #a1a1a1;
+  color: white;
+  font-weight: 600;
+  max-height: 100vh;
+  border-radius:8px;
+}
+
+.playing-xi h3 {
+  padding: 10px;
+}
+
+h3 span {
+  color:#007bbe;
+    margin-left: 3px;
+
 }

@@ -19,38 +19,155 @@ const DragDrop = () => {
 
   const addPlayerToXI = (id) => {
     const playerList = MI.filter((player) => id === player.id);
+    console.log(playerList);
     setBoard((board) => [...board, playerList[0]]);
   };
 
-  const clickHandler = (id) => {
-    console.log(id);
+  const clickHandler = (player) => {
+    console.log(player);
   };
 
   return (
-    <>
+    <div className="container">
       <div className="pictures">
         {MI.map((player) => {
           return (
-            <Button onClick={() => addPlayerToXI(player.id)}>
-              <Picture key={player.id} id={player.id} url={player.url} />
+            <Button onClick={() => addPlayerToXI(player.id)} key={player.id}>
+              <Picture id={player.id} url={player.url} />
             </Button>
           );
         })}
       </div>
       <div className="playing-xi">
-        <h4>Playing XI</h4>
+        <h3>
+          Your Team of <span>MI</span>
+        </h3>
         <div className="Board" ref={drop}>
-          {board.map((player) => {
-            return (
-              <h2 className="player-card" key={player.id}>
-                {player.name}
-              </h2>
-            );
-          })}
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
+          <div className="player-container">
+            <div className="player-digit">1</div>
+            <div className="player-card">
+              <img
+                className="xi-img"
+                src="https://cdn-icons-png.flaticon.com/512/1193/1193274.png"
+              />
+              <h2>Player</h2>
+            </div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default DragDrop;
+// {
+//   board.map((player) => {
+//     return (
+//       <div className="player-card" key={player.id}>
+//         {/* <img className="xi-img" src={player.url} /> */}
+//         <img className="xi-img" src={player.url} />
+//         <h2>{player.name}</h2>
+//       </div>
+//     );
+//   });
+// }

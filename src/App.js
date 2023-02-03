@@ -8,7 +8,7 @@ function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="App">
-        <h1>MUMBAI INDIANS SQUAD - IPL2023</h1>
+        <h1>Build your Team of #IPL2023</h1>
         <div className="playfield">
           <DragDrop />
         </div>
